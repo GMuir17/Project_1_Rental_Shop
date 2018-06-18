@@ -13,26 +13,28 @@ class Deployment
     @returned = options["returned"]
   end
 
-  # instance variables
-    def save()
-      sql = "INSERT INTO deployments (
-              legion_id,
-              general_id,
-              start_date,
-              campaign_length)
-            VALUES ($1, $2, $3, $4)
-            RETURNING id;"
-      values = [@legion_id, @general_id, @start_date, @campaign_length]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()["id"].to_i()
-    end
+# instance variables
+  def save()
+    sql = "INSERT INTO deployments (
+            legion_id,
+            general_id,
+            start_date,
+            campaign_length)
+          VALUES ($1, $2, $3, $4)
+          RETURNING id;"
+    values = [@legion_id, @general_id, @start_date, @campaign_length]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()["id"].to_i()
+  end
 
 
-  # class variables
-    def self.delete_all()
-      sql = "DELETE FROM deployments;"
-      SqlRunner.run(sql)
-    end
+# class variables
+  def self.delete_all()
+    sql = "DELETE FROM deployments;"
+    SqlRunner.run(sql)
+  end
+
+
 
 
 
