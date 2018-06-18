@@ -12,7 +12,7 @@ class Deployment
     @general_id = options["general_id"].to_i()
     @start_date = options["start_date"]
     @campaign_length = options["campaign_length"].to_i()
-    @returned = options["returned"]
+    @returned = options["returned"] || false
   end
 
 
@@ -63,6 +63,14 @@ class Deployment
     results = SqlRunner.run(sql, values)
     general = General.new(results.first())
     return general
+  end
+
+  def return_legion()
+    sql = "UPDATE deployments
+          SET returned = true
+          WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
 

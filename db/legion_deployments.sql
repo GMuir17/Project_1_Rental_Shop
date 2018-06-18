@@ -25,5 +25,5 @@ CREATE TABLE deployments
   general_id INT4 REFERENCES generals(id),
   start_date VARCHAR(255),
   campaign_length INT4,
-  returned BOOLEAN DEFAULT FALSE
+  returned BOOLEAN
 );
