@@ -22,6 +22,14 @@ legion2 = Legion.new({
   })
 legion2.save()
 
+legion3 = Legion.new({
+  "name" => "Praetorian Guard",
+  "strength" => 10,
+  "moto" => "Kingmakers"
+  })
+legion3.save()
+
+
 # generals
 general1 = General.new({
   "name" => "Marcus Agrippa",
@@ -34,6 +42,13 @@ general2 = General.new({
   "reputation" => 6
   })
 general2.save()
+
+general3 = General.new({
+  "name" => "Aemilius Lepidus",
+  "reputation" => 8
+  })
+general3.save()
+
 
 # deployments
 deployment1 = Deployment.new({
@@ -51,6 +66,14 @@ deployment2 = Deployment.new({
   "campaign_length" => 4
   })
 deployment2.save()
+
+deployment3 = Deployment.new({
+  "legion_id" => legion3.id(),
+  "general_id" => general1.id(),
+  "start_date" => "45BC",
+  "campaign_length" => 2
+  })
+deployment3.save()
 
 
 
