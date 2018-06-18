@@ -54,5 +54,12 @@ class Legion
     return result
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM legions WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    legion = Legion.new(results.first())
+    return legion
+  end
 
 end
