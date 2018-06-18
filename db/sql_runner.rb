@@ -2,7 +2,7 @@ require("pg")
 
 class SqlRunner
 
-  def sel.run(sql, values = [])
+  def self.run(sql, values = [])
     begin
       db = PG.connect({
         dbname: "legion_deployment",
