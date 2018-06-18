@@ -41,9 +41,9 @@ class Legion
     SqlRunner.run(sql, values)
   end
 
-  def deployed?()
-
-  end
+  # def deployed?()
+  #
+  # end
 
 
 # class variables

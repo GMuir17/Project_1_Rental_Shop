@@ -28,4 +28,11 @@ class General
       SqlRunner.run(sql)
     end
 
+    def self.all()
+      sql = "SELECT * FROM generals;"
+      generals = SqlRunner.run(sql)
+      result = generals.map {|general| General.new(general)}
+      return result
+    end
+
 end
