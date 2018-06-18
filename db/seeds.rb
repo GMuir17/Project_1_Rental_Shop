@@ -82,7 +82,6 @@ deployment3 = Deployment.new({
   })
 deployment3.save()
 
-# p deployment3.returned()
 
 binding.pry
 nil

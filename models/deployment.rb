@@ -66,6 +66,7 @@ class Deployment
   end
 
   def return_legion()
+    @returned = true
     sql = "UPDATE deployments
           SET returned = true
           WHERE id = $1;"
