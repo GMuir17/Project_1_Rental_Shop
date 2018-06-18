@@ -19,4 +19,24 @@ class DeploymentTest < MiniTest::Test
     assert_equal(1, @deployment1.id())
   end
 
+  def test_has_legion_id()
+    assert_equal(2, @deployment1.legion_id())
+  end
+
+  def test_has_general_id()
+    assert_equal(3, @deployment1.general_id())
+  end
+
+  def test_has_start_date()
+    assert_equal("19BC", @deployment1.start_date())
+  end
+
+  def test_has_campaign_length()
+    assert_equal(4, @deployment1.campaign_length())
+  end
+
+  def test_has_returned()
+    assert_equal(false, @deployment1.returned())
+  end
+
 end
