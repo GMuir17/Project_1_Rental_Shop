@@ -47,6 +47,15 @@ class Deployment
     SqlRunner.run(sql, values)
   end
 
+  def legion()
+    sql = "SELECT * FROM legions
+          WHERE id = $1;"
+    values = [@legion_id]
+    results = SqlRunner.run(sql, values)
+    legion = Legion.new(results.first())
+    return legion
+  end
+
 
 # class variables
   def self.delete_all()
