@@ -53,4 +53,12 @@ class General
       return result
     end
 
+    def self.find_by_id(id)
+      sql = "SELECT * FROM generals WHERE id = $1;"
+      values = [id]
+      results = SqlRunner.run(sql, values)
+      general = General.new(results.first())
+      return general
+    end
+
 end
