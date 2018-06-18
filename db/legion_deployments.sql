@@ -14,7 +14,7 @@ CREATE TABLE generals
 (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  province VARCHAR(255),
+  -- province VARCHAR(255),
   reputation INT4
 );
 

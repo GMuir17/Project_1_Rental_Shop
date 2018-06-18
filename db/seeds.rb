@@ -10,7 +10,12 @@ legion1 = Legion.new({
   })
 legion1.save()
 
-# legion2 = L
+legion2 = Legion.new({
+  "name" => "The 10th",
+  "strength" => 10,
+  "moto" => "Hail Caesar"
+  })
+legion2.save()
 
 
 binding.pry
