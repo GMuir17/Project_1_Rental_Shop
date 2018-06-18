@@ -16,4 +16,12 @@ class LegionTest < MiniTest::Test
     assert_equal("The 9th", @legion1.name())
   end
 
+  def test_has_id()
+    assert_equal(1, @legion1.id())
+  end
+
+  def test_has_strength()
+    assert_equal(10, @legion1.strength())
+  end
+
 end
