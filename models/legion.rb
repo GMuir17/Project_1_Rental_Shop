@@ -10,15 +10,16 @@ class Legion
     @id = options["id"].to_i() if options["id"]
     @name = options["name"]
     @strength = options["strength"].to_i()
+    @moto = options["moto"]
   end
 
 # instance variables
   def save()
     sql = "INSERT INTO legions (
-          name, strength)
-          VALUES ($1, $2)
+          name, strength, moto)
+          VALUES ($1, $2, $3)
           RETURNING id;"
-    values = [@name, @strength]
+    values = [@name, @strength, @moto]
     results = SqlRunner.run(sql, values)
     @id = results.first()["id"].to_i()
   end
@@ -38,6 +39,10 @@ class Legion
           WHERE id = $1;"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def deployed?()
+
   end
 
 

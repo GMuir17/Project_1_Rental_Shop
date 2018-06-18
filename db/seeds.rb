@@ -29,6 +29,13 @@ legion3 = Legion.new({
   })
 legion3.save()
 
+legion4 = Legion.new({
+  "name" => "The 9th",
+  "strength" => 4,
+  "moto" => "The Lost Legion"
+  })
+legion4.save()
+
 
 # generals
 general1 = General.new({
@@ -68,7 +75,7 @@ deployment2 = Deployment.new({
 deployment2.save()
 
 deployment3 = Deployment.new({
-  "legion_id" => legion3.id(),
+  "legion_id" => legion4.id(),
   "general_id" => general1.id(),
   "start_date" => "45BC",
   "campaign_length" => 2
