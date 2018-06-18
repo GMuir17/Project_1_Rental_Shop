@@ -10,8 +10,15 @@ class Legion
     @strength = options["strength"].to_i()
   end
 
-
-
+  def save()
+    sql = "INSERT INTO legions (
+          name, strength)
+          VALUES ($1, $2)
+          RETURNING id;"
+    values = [@name, @strength]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()["id"]      
+  end
 
 
 
