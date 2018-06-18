@@ -61,5 +61,13 @@ class Deployment
     return result
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM deployments WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    deployment = Deployment.new(results.first())
+    return deployment
+  end
+
 
 end
