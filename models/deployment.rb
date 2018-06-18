@@ -34,7 +34,12 @@ class Deployment
     SqlRunner.run(sql)
   end
 
-
+  def self.all()
+    sql = "SELECT * FROM deployments;"
+    deployments = SqlRunner.run(sql)
+    result = deployments.map {|deployment| Deployment.new(deployment)}
+    return result
+  end
 
 
 
