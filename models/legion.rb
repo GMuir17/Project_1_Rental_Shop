@@ -3,7 +3,8 @@ require_relative("../db/sql_runner.rb")
 class Legion
 
   attr_reader(:id, :name, :strength)
-  attr_writer(:name)
+  # attr_writer added to test update() method with pry
+  # attr_writer(:name)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -29,6 +30,13 @@ class Legion
           ($1, $2)
           WHERE id = $3;"
     values = [@name, @strength, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM legions
+          WHERE id = $1;"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
