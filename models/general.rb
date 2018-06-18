@@ -3,6 +3,8 @@ require_relative("../db/sql_runner.rb")
 class General
 
   attr_reader(:id, :name, :reputation)
+  # attr_writer added to test update() method with pry
+  # attr_writer(:name)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -19,6 +21,16 @@ class General
       values = [@name, @reputation]
       results = SqlRunner.run(sql, values)
       @id = results.first()["id"].to_i()
+    end
+
+    def update()
+      sql = "UPDATE generals SET (
+            name, reputation)
+            =
+            ($1, $2)
+            WHERE id = $3;"
+      values = [@name, @reputation, @id]
+      SqlRunner.run(sql, values)
     end
 
     def delete()
