@@ -10,6 +10,7 @@ class Legion
     @strength = options["strength"].to_i()
   end
 
+# instance variables
   def save()
     sql = "INSERT INTO legions (
           name, strength)
@@ -17,11 +18,15 @@ class Legion
           RETURNING id;"
     values = [@name, @strength]
     results = SqlRunner.run(sql, values)
-    @id = results.first()["id"]      
+    @id = results.first()["id"]
   end
 
 
-
+# class variables
+  def self.delete_all()
+    sql = "DELETE FROM legions;"
+    SqlRunner.run(sql)
+  end
 
 
 end
