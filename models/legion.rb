@@ -42,9 +42,17 @@ class Legion
     SqlRunner.run(sql, values)
   end
 
-  # def deployed?()
-  #
-  # end
+  def deployed?()
+    sql = "SELECT returned FROM deployments
+          WHERE deployments.legion_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()["returned"]
+    if result == "f"
+      return true
+    else
+      return false
+    end
+  end
 
 
 # class variables
