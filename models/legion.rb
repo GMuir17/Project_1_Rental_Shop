@@ -18,7 +18,7 @@ class Legion
           RETURNING id;"
     values = [@name, @strength]
     results = SqlRunner.run(sql, values)
-    @id = results.first()["id"]
+    @id = results.first()["id"].to_i()
   end
 
 

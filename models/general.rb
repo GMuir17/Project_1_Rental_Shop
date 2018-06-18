@@ -18,7 +18,7 @@ class General
             RETURNING id;"
       values = [@name, @reputation]
       results = SqlRunner.run(sql, values)
-      @id = results.first()["id"]
+      @id = results.first()["id"].to_i()
     end
 
 
