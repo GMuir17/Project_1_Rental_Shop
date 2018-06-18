@@ -3,7 +3,8 @@ require_relative("../db/sql_runner.rb")
 class Deployment
 
   attr_reader(:id, :legion_id, :general_id, :start_date, :campaign_length, :returned)
-  attr_writer(:campaign_length)
+  # attr_writer added to test update() method with pry
+  # attr_writer(:campaign_length)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -36,6 +37,13 @@ class Deployment
           ($1, $2)
           WHERE id = $3;"
     values = [@campaign_length, @returned, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM deployments
+          WHERE id = $1;"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
