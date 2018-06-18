@@ -56,6 +56,15 @@ class Deployment
     return legion
   end
 
+  def general()
+    sql = "SELECT * FROM generals
+          WHERE id = $1;"
+    values = [@general_id]
+    results = SqlRunner.run(sql, values)
+    general = General.new(results.first())
+    return general
+  end
+
 
 # class variables
   def self.delete_all()
