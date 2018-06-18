@@ -3,6 +3,7 @@ require_relative("../db/sql_runner.rb")
 class Deployment
 
   attr_reader(:id, :legion_id, :general_id, :start_date, :campaign_length, :returned)
+  attr_writer(:campaign_length)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -12,6 +13,7 @@ class Deployment
     @campaign_length = options["campaign_length"].to_i()
     @returned = options["returned"]
   end
+
 
 # instance variables
   def save()
@@ -27,6 +29,16 @@ class Deployment
     @id = results.first()["id"].to_i()
   end
 
+  def update()
+    sql = "UPDATE deployments SET (
+          campaign_length, returned)
+          =
+          ($1, $2)
+          WHERE id = $3;"
+    values = [@campaign_length, @returned, @id]
+    SqlRunner.run(sql, values)
+  end
+
 
 # class variables
   def self.delete_all()
@@ -40,7 +52,6 @@ class Deployment
     result = deployments.map {|deployment| Deployment.new(deployment)}
     return result
   end
-
 
 
 end

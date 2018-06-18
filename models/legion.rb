@@ -13,6 +13,7 @@ class Legion
     @moto = options["moto"]
   end
 
+
 # instance variables
   def save()
     sql = "INSERT INTO legions (

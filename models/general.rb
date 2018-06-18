@@ -12,6 +12,7 @@ class General
     @reputation = options["reputation"]
   end
 
+
   # instance variables
   def save()
     sql = "INSERT INTO generals (
@@ -39,6 +40,7 @@ class General
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
 
   # class variables
   def self.delete_all()
