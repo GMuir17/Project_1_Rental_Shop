@@ -10,4 +10,22 @@ class General
     @reputation = options["reputation"]
   end
 
+  # instance variables
+    def save()
+      sql = "INSERT INTO generals (
+            name, reputation)
+            VALUES ($1, $2)
+            RETURNING id;"
+      values = [@name, @reputation]
+      results = SqlRunner.run(sql, values)
+      @id = results.first()["id"]
+    end
+
+
+  # class variables
+    def self.delete_all()
+      sql = "DELETE FROM generals;"
+      SqlRunner.run(sql)
+    end
+
 end

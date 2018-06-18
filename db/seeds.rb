@@ -1,7 +1,9 @@
 require_relative("../models/legion.rb")
+require_relative("../models/general.rb")
 require("pry")
 
 Legion.delete_all()
+General.delete_all()
 
 legion1 = Legion.new({
   "name" => "The 17th",
@@ -16,6 +18,18 @@ legion2 = Legion.new({
   "moto" => "Hail Caesar"
   })
 legion2.save()
+
+general1 = General.new({
+  "name" => "Marcus Agrippa",
+  "reputation" => 10
+  })
+general1.save()
+
+general2 = General.new({
+  "name" => "Marc Antony",
+  "reputation" => 6
+  })
+general2.save()
 
 
 binding.pry
