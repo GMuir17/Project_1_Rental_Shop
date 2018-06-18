@@ -21,6 +21,12 @@ class General
       @id = results.first()["id"].to_i()
     end
 
+    def delete()
+      sql = "DELETE FROM generals
+            WHERE id = $1;"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
 
   # class variables
     def self.delete_all()
