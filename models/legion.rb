@@ -39,5 +39,12 @@ class Legion
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM legions;"
+    legions = SqlRunner.run(sql)
+    result = legions.map {|legion| Legion.new(legion)}
+    return result
+  end
+
 
 end
