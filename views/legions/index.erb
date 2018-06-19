@@ -1,7 +1,8 @@
 <h1>Legions</h1>
 
+<p><a href="/legions/new">Raise New Legion</a></p>
+<br>
 <% for legion in @legions %>
-<p><%= legion.name() %></p>
-<p><a href="/legions/<%= legion.id() %>">More Details</a></p>
+<p><a href="/legions/<%= legion.id() %>"><%= legion.name() %></a></p>
 <hr>
 <% end %>
