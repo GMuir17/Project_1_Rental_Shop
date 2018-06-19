@@ -4,3 +4,6 @@
   <li>Reputation: <%= @general.reputation() %></li>
 </ul>
 <br>
+<form method="post" action="/generals/<%= @general.id() %>/delete">
+  <input type="submit" value="'Fire' General">
+</form>

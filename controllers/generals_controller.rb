@@ -26,13 +26,13 @@ post "/generals" do
   @general.save()
   erb(:"generals/create")
 end
-#
-# # delete
-# post "/legions/:id/delete" do
-#   @legion = Legion.find_by_id(params["id"].to_i())
-#   @legion.delete()
-#   redirect "/legions"
-# end
+
+# delete
+post "/generals/:id/delete" do
+  @general = General.find_by_id(params["id"].to_i())
+  @general.delete()
+  redirect "/generals"
+end
 
 # edit
 get "/generals/:id/edit" do
