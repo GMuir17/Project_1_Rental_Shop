@@ -37,9 +37,9 @@ get "/deployments/:id/edit" do
   erb(:"deployments/edit")
 end
 
-# # update
-# post "/legions/:id" do
-#   @legion = Legion.new(params)
-#   @legion.update()
-#   redirect "/legions/#{@legion.id()}"
-# end
+# update
+post "/deployments/:id" do
+  @deployment = Deployment.new(params)
+  @deployment.update()
+  redirect "/deployments/#{@deployment.id()}"
+end
