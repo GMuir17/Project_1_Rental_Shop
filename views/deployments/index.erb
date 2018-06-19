@@ -1,0 +1,7 @@
+<h1>Deployments</h1>
+
+<% for deployment in @deployments %>
+<p>Troops recruited in: <%= deployment.start_date() %></p>
+<p>Campaign will last <%= deployment.campaign_length() %> seasons</p>
+<hr>
+<% end %>
