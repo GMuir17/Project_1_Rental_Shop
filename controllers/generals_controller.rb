@@ -1,6 +1,6 @@
 require("sinatra")
 require("sinatra/contrib/all")
-require_relative("../models/legion.rb")
+require_relative("../models/general.rb")
 also_reload("../models/*")
 
 # index
@@ -13,13 +13,13 @@ end
 # get "/legions/new" do
 #   erb(:"legions/new")
 # end
-#
-# # show
-# get "/legions/:id" do
-#   @legion = Legion.find_by_id(params["id"].to_i())
-#   erb(:"legions/show")
-# end
-#
+
+# show
+get "/generals/:id" do
+  @general = General.find_by_id(params["id"].to_i())
+  erb(:"generals/show")
+end
+
 # # create
 # post "/legions" do
 #   @legion = Legion.new(params)
