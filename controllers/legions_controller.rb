@@ -32,3 +32,10 @@ get "/legions/:id/edit" do
   @legion = Legion.find_by_id(params["id"].to_i())
   erb(:"legions/edit")
 end
+
+# update
+post "/legions/:id" do
+  @legion = Legion.new(params)
+  @legion.update()
+  redirect "/legions/#{@legion.id()}"
+end
