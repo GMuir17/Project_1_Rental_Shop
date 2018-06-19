@@ -4,4 +4,8 @@
   <li>Strength: <%= @legion.strength() %> cohorts</li>
   <li><%= @legion.moto() %></li>
 </ul>
+<br>
+<form method="post" action="/legions/<%= @legion.id() %>/delete">
+  <input type="submit" value="Disband Legion"/>
+</form>
 <hr>

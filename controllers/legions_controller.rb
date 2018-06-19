@@ -27,6 +27,13 @@ post "/legions" do
   erb(:"legions/create")
 end
 
+# delete
+post "/legions/:id/delete" do
+  @legion = Legion.find_by_id(params["id"].to_i())
+  @legion.delete()
+  redirect "/legions"
+end
+
 # edit
 get "/legions/:id/edit" do
   @legion = Legion.find_by_id(params["id"].to_i())
