@@ -39,7 +39,14 @@ end
 
 # update
 post "/deployments/:id" do
-  @deployment = Deployment.new(params)
+  @deployment = Deployment.find_by_id(params["id"])
+  @deployment.campaign_length = params["campaign_length"]
   @deployment.update()
+  redirect "/deployments/#{@deployment.id()}"
+end
+
+post "/deployments/:id/end-deployment" do
+  @deployment = Deployment.find_by_id(params["id"])
+  @deployment.return_legion()
   redirect "/deployments/#{@deployment.id()}"
 end

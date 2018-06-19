@@ -4,7 +4,7 @@ class Deployment
 
   attr_reader(:id, :legion_id, :general_id, :start_date, :campaign_length, :returned)
   # attr_writer added to test update() method with pry
-  # attr_writer(:campaign_length)
+  attr_writer(:campaign_length)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -67,11 +67,7 @@ class Deployment
 
   def return_legion()
     @returned = true
-    sql = "UPDATE deployments
-          SET returned = true
-          WHERE id = $1;"
-    values = [@id]
-    SqlRunner.run(sql, values)
+    update()
   end
 
   def bool_to_text()
