@@ -10,3 +10,11 @@ get "/deployments" do
   @deployments = Deployment.all()
   erb(:"/deployments/index")
 end
+
+# new
+
+# show
+get "/deployments/:id" do
+  @deployment = Deployment.find_by_id(params["id"].to_i())
+  erb(:"/deployments/show")
+end

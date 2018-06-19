@@ -3,5 +3,6 @@
 <% for deployment in @deployments %>
 <p>Troops recruited in: <%= deployment.start_date() %></p>
 <p>Campaign will last <%= deployment.campaign_length() %> seasons</p>
+<p><a href="/deployments/<%= deployment.id() %>">More Details</a></p>
 <hr>
 <% end %>
