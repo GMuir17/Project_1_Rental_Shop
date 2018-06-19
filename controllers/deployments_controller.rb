@@ -23,3 +23,10 @@ get "/deployments/:id" do
   @deployment = Deployment.find_by_id(params["id"].to_i())
   erb(:"/deployments/show")
 end
+
+# create
+post "/deployments" do
+  @deployment = Deployment.new(params)
+  @deployment.save()
+  erb(:"deployments/create")
+end
