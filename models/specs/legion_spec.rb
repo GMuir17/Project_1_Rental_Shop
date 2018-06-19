@@ -7,7 +7,8 @@ class LegionTest < MiniTest::Test
     options = {
       "id" => 1,
       "name" => "The 9th",
-      "strength" => 10
+      "strength" => 10,
+      "moto" => "Test moto"
     }
     @legion1 = Legion.new(options)
   end
@@ -22,6 +23,10 @@ class LegionTest < MiniTest::Test
 
   def test_has_strength()
     assert_equal(10, @legion1.strength())
+  end
+
+  def test_has_moto()
+    assert_equal("Test moto", @legion1.moto())
   end
 
 end

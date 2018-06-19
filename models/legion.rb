@@ -2,7 +2,7 @@ require_relative("../db/sql_runner.rb")
 
 class Legion
 
-  attr_reader(:id, :name, :strength)
+  attr_reader(:id, :name, :strength, :moto)
   # attr_writer added to test update() method with pry
   # attr_writer(:name)
 
