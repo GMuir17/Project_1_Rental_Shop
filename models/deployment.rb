@@ -74,6 +74,13 @@ class Deployment
     SqlRunner.run(sql, values)
   end
 
+  def bool_to_text()
+    if @returned == false
+      return "No"
+    else
+      return "Yes"
+    end
+  end
 
 # class variables
   def self.delete_all()

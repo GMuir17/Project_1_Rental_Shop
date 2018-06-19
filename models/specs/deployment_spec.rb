@@ -39,4 +39,21 @@ class DeploymentTest < MiniTest::Test
     assert_equal(false, @deployment1.returned())
   end
 
+  def test_bool_to_text__false
+    assert_equal("No", @deployment1.bool_to_text())
+  end
+
+  def test_bool_to_text__true
+    options = {
+      "id" => 1,
+      "legion_id" => 2,
+      "general_id" => 3,
+      "start_date" => "19BC",
+      "campaign_length" => 4,
+      "returned" => true
+    }
+    deployment1 = Deployment.new(options)
+    assert_equal("Yes", deployment1.bool_to_text())
+  end
+
 end
