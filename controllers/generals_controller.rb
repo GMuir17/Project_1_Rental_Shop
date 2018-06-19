@@ -40,9 +40,9 @@ get "/generals/:id/edit" do
   erb(:"generals/edit")
 end
 
-# # update
-# post "/legions/:id" do
-#   @legion = Legion.new(params)
-#   @legion.update()
-#   redirect "/legions/#{@legion.id()}"
-# end
+# update
+post "/generals/:id" do
+  @general = General.new(params)
+  @general.update()
+  redirect "/generals/#{@general.id()}"
+end
