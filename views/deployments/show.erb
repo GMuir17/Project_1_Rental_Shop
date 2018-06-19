@@ -6,5 +6,11 @@
   <li>Campaign Start: <%= @deployment.start_date() %></li>
   <li>Campaign Length: <%= @deployment.campaign_length() %> seasons</li>
   <li>Deployment over? <%= @deployment.bool_to_text() %></li>
+  <li>
+    <form action="/deployments/<%= @deployment.id() %>" method="post">
+      <% @deployment.return_legion() %>
+      <input type="submit" value="End Deployment">
+    </form>
+  </li>
 </ul>
 <br>
