@@ -20,12 +20,12 @@ get "/generals/:id" do
   erb(:"generals/show")
 end
 
-# # create
-# post "/legions" do
-#   @legion = Legion.new(params)
-#   @legion.save()
-#   erb(:"legions/create")
-# end
+# create
+post "/generals" do
+  @general = General.new(params)
+  @general.save()
+  erb(:"generals/create")
+end
 #
 # # delete
 # post "/legions/:id/delete" do
