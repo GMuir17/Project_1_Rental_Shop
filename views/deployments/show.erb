@@ -1,6 +1,9 @@
-<h3><%= @deployment.start_date() %></h3>
+<h3>Deployment <%= @deployment.id() %></h3>
 <br>
 <ul>
+  <li>General in Command: <%= @deployment.general().name() %></li>
+  <li>Legion deployed: <%= @deployment.legion().name() %></li>
+  <li>Campaign Start: <%= @deployment.start_date() %></li>
   <li>Campaign Length: <%= @deployment.campaign_length() %> seasons</li>
 </ul>
 <br>
