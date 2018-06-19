@@ -9,10 +9,10 @@ get "/generals" do
   erb(:"generals/index")
 end
 
-# # new
-# get "/legions/new" do
-#   erb(:"legions/new")
-# end
+# new
+get "/generals/new" do
+  erb(:"generals/new")
+end
 
 # show
 get "/generals/:id" do
