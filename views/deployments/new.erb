@@ -1,0 +1,25 @@
+<form method="post" action="/deployments">
+
+  <label for="general_select">General:</label>
+  <select name="general_id" id="general_select">
+    <% for general in @generals  %>
+    <option value=<%= general.id() %>><%= general.name() %></option>
+    <% end %>
+  </select>
+
+  <label for="legion_select">Legion:</label>
+  <select name="legion_id" id="legion_select">
+    <% for legion in @legions  %>
+    <option value=<%= legion.id() %>><%= legion.name() %></option>
+    <% end %>
+  </select>
+
+  <label for="start_date">Start Date:</label>
+  <input type="number" name="start_date">
+
+  <label for="campaign_length">Campaign Length:</label>
+  <input type="number" name="campaign_length">
+
+  <input type="submit" value="Assign Legion"/>
+
+</form>

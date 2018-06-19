@@ -12,6 +12,11 @@ get "/deployments" do
 end
 
 # new
+get "/deployments/new" do
+  @generals = General.all()
+  @legions = Legion.all()
+  erb(:"/deployments/new")
+end
 
 # show
 get "/deployments/:id" do
