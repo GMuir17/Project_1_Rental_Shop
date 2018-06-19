@@ -1,0 +1,7 @@
+
+<form method="post" action="/deployments/<%= @deployment.id() %>">
+
+  <label for="deployment_length">Length:</label>
+  <input id="deployment_length" type="number" name="deployment_length" value="<%= @deployment.campaign_length() %>">
+
+</form>

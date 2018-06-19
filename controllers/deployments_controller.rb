@@ -30,3 +30,16 @@ post "/deployments" do
   @deployment.save()
   erb(:"deployments/create")
 end
+
+# edit
+get "/deployments/:id/edit" do
+  @deployment = Deployment.find_by_id(params["id"].to_i())
+  erb(:"deployments/edit")
+end
+
+# # update
+# post "/legions/:id" do
+#   @legion = Legion.new(params)
+#   @legion.update()
+#   redirect "/legions/#{@legion.id()}"
+# end
