@@ -9,6 +9,11 @@ get "/legions" do
   erb(:"legions/index")
 end
 
+# new
+get "/legions/new" do
+  erb(:"legions/new")
+end
+
 # show
 get "/legions/:id" do
   @legion = Legion.find_by_id(params["id"].to_i())

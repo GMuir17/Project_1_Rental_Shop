@@ -1,5 +1,7 @@
 <h1>Legions</h1>
 
 <% for legion in @legions %>
-<p><a href="/legions/<%= legion.id() %>"><%= legion.name() %></a></p>
+<p><%= legion.name() %></p>
+<p><a href="/legions/<%= legion.id() %>">More Details</a></p>
+<hr>
 <% end %>
