@@ -1,0 +1,15 @@
+
+<form method="post" action="/legions/<%= @legion.id() %>">
+
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%= @legion.name() %>"/>
+
+  <label for="strength">Strength (in cohorts):</label>
+  <input id="strength" type="number" name="strength" value="<%= @legion.strength() %>"/>
+
+  <label for="moto">Moto:</label>
+  <input id="moto" type="text" name="moto" value="<%= @legion.moto() %>">
+
+  <input type="submit" value="Edit Legion">
+
+</form>
