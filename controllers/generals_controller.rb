@@ -33,13 +33,13 @@ end
 #   @legion.delete()
 #   redirect "/legions"
 # end
-#
-# # edit
-# get "/legions/:id/edit" do
-#   @legion = Legion.find_by_id(params["id"].to_i())
-#   erb(:"legions/edit")
-# end
-#
+
+# edit
+get "/generals/:id/edit" do
+  @general = General.find_by_id(params["id"].to_i())
+  erb(:"generals/edit")
+end
+
 # # update
 # post "/legions/:id" do
 #   @legion = Legion.new(params)

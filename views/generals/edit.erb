@@ -1,0 +1,12 @@
+
+<form method="post" action="/generals/<%= @general.id() %>">
+
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%= @general.name() %>"/>
+
+  <label for="reputation">Reputation:</label>
+  <input id="reputation" type="number" name="reputation" value="<%= @general.reputation() %>"/>
+
+  <input type="submit" value="Edit General">
+
+</form>
