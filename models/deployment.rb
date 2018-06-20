@@ -118,5 +118,14 @@ class Deployment
     # returns an array
   end
 
+  def self.find_by_returned(returned)
+    sql = "SELECT * FROM deployments WHERE returned = $1;"
+    values = [returned]
+    results = SqlRunner.run(sql, values)
+    deployments = results.map {|deployment| Deployment.new(deployment)}
+    return deployments
+    # returns an array
+  end
+
 
 end
