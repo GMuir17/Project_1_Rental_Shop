@@ -85,4 +85,13 @@ class General
     return general
   end
 
+  def self.find_by_reputation(reputation)
+    sql = "SELECT * FROM generals WHERE reputation = $1;"
+    values = [reputation]
+    results = SqlRunner.run(sql, values)
+    generals = results.map {|general| General.new(general)}
+    return generals
+    # returns an array
+  end
+
 end
