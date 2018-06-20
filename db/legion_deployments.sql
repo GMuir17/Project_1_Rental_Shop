@@ -21,8 +21,8 @@ CREATE TABLE generals
 CREATE TABLE deployments
 (
   id SERIAL8 PRIMARY KEY,
-  legion_id INT4 REFERENCES legions(id),
-  general_id INT4 REFERENCES generals(id),
+  legion_id INT4 REFERENCES legions(id) ON DELETE CASCADE,
+  general_id INT4 REFERENCES generals(id) ON DELETE CASCADE,
   start_date VARCHAR(255),
   campaign_length INT4,
   returned BOOLEAN
