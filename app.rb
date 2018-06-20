@@ -1,8 +1,9 @@
 require("sinatra")
 require("sinatra/contrib/all")
-require_relative("controllers/legions_controller")
-require_relative("controllers/generals_controller")
-require_relative("controllers/deployments_controller")
+require_relative("controllers/legions_controller.rb")
+require_relative("controllers/generals_controller.rb")
+require_relative("controllers/deployments_controller.rb")
+require_relative("controllers/searches_controller.rb")
 also_reload("../models/*")
 
 get '/' do
