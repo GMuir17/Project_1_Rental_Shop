@@ -30,8 +30,12 @@ end
 # delete
 post "/generals/:id/delete" do
   @general = General.find_by_id(params["id"].to_i())
-  @general.delete()
-  redirect "/generals"
+  if @general.deployed? == true
+    erb(:"generals/error")
+  else
+    @general.delete()
+    redirect "/generals"
+  end
 end
 
 # edit

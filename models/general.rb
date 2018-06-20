@@ -41,6 +41,20 @@ class General
     SqlRunner.run(sql, values)
   end
 
+  def deployed?()
+    sql = "SELECT returned FROM deployments
+          WHERE deployments.general_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    return false if result == nil
+    returned_result = result["returned"]
+    if returned_result == "f"
+      return true
+    else
+      return false
+    end
+  end
+
 
   # class variables
   def self.delete_all()
