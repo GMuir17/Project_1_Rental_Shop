@@ -1,0 +1,10 @@
+<h3><%= @legion.name() %></h3>
+<ul>
+  <li>Strength: <%= @legion.strength() %> cohorts</li>
+  <li><%= @legion.moto() %></li>
+</ul>
+<br>
+<a href="/legions/<%= @legion.id() %>/edit">Edit Legion</a>
+<form method="post" action="/legions/<%= @legion.id() %>/delete">
+  <input type="submit" value="Disband Legion"/>
+</form>

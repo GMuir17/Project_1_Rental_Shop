@@ -5,15 +5,14 @@ require_relative("../models/general.rb")
 require_relative("../models/deployment.rb")
 also_reload("../models/*")
 
-# get "/search" do
-#   @legions = Legion.all()
-#   for legion in @legions
-#     if params["name"] == legion.name()
-#       erb(:"/legion/show")
-#     end
-#   end
-# end
-
 get "/search" do
   erb(:"/searches/search")
+end
+
+post "/search" do
+  @legion = Legion.find_by_name(params["name"])
+  return erb(:"/searches/no_result") if @legion == nil
+  erb(:"/searches/results")
+  # @legion = Legion.find_by_name(params)
+  # erb(:"/searches/results")
 end
