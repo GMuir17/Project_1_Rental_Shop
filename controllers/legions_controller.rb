@@ -30,10 +30,9 @@ end
 # delete
 post "/legions/:id/delete" do
   @legion = Legion.find_by_id(params["id"].to_i())
-  if @legion.deployed?
-    erb(:error)
+  if @legion.deployed? == true
+    erb(:"legions/error")
   else
-    # return "Not today" if @legion.deployed?() == true
     @legion.delete()
     redirect "/legions"
   end

@@ -56,4 +56,9 @@ class DeploymentTest < MiniTest::Test
     assert_equal("Yes", deployment1.bool_to_text())
   end
 
+  def test_return_legion()
+    @deployment1.return_legion()
+    assert_equal(true, @deployment1.returned())
+  end
+
 end
