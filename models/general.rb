@@ -77,4 +77,12 @@ class General
     return general
   end
 
+  def self.find_by_name(name)
+    sql = "SELECT * FROM generals WHERE name = $1;"
+    values = [name]
+    results = SqlRunner.run(sql, values)
+    general = General.new(results.first())
+    return general
+  end
+
 end
