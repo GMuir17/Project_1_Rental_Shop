@@ -48,8 +48,8 @@ class Legion
           WHERE deployments.legion_id = $1;"
     values = [@id]
     result = SqlRunner.run(sql, values).first()
-    returned_result = result["returned"]
     return false if result == nil
+    returned_result = result["returned"]
     if returned_result == "f"
       return true
     else
