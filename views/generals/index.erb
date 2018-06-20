@@ -1,5 +1,7 @@
 <h1>Generals</h1>
 
+<p><a href="/generals/new">Hire New General</a></p>
+<br>
 <% for general in @generals %>
 <p><%= general.name() %></p>
 <p><a href="/generals/<%= general.id() %>">More Details</a></p>

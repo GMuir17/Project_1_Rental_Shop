@@ -1,5 +1,7 @@
 <h1>Deployments</h1>
 
+<p><a href="/deployments/new">Create New Deployment</a></p>
+<br>
 <% for deployment in @deployments %>
 <p>Troops recruited in: <%= deployment.start_date() %></p>
 <p>Campaign will last <%= deployment.campaign_length() %> seasons</p>
