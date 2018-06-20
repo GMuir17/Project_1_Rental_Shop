@@ -72,7 +72,7 @@ class Deployment
   end
 
   def bool_to_text()
-    if @returned == false
+    if @returned == "f"
       return "No"
     else
       return "Yes"
