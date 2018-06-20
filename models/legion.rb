@@ -79,4 +79,21 @@ class Legion
     return legion
   end
 
+  def self.find_by_name(name)
+    sql = "SELECT * FROM legions WHERE name = $1;"
+    values = [name]
+    results = SqlRunner.run(sql, values)
+    legion = Legion.new(results.first())
+    return legion
+  end
+
+  def self.find_by_strength(strength)
+    sql = "SELECT * FROM legions WHERE strength = $1;"
+    values = [strength]
+    results = SqlRunner.run(sql, values)
+    legions = results.map {|legion| Legion.new(legion)}
+    return legions
+    # returns an array
+  end
+
 end
