@@ -4,7 +4,7 @@ class Deployment
 
   attr_reader(:id, :legion_id, :general_id, :start_date, :campaign_length, :returned)
   # attr_writer added to test update() method with pry
-  attr_writer(:campaign_length)
+  attr_writer(:campaign_length, :returned)
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -22,10 +22,11 @@ class Deployment
             legion_id,
             general_id,
             start_date,
-            campaign_length)
-          VALUES ($1, $2, $3, $4)
+            campaign_length,
+            returned)
+          VALUES ($1, $2, $3, $4, $5)
           RETURNING id;"
-    values = [@legion_id, @general_id, @start_date, @campaign_length]
+    values = [@legion_id, @general_id, @start_date, @campaign_length, @returned]
     results = SqlRunner.run(sql, values)
     @id = results.first()["id"].to_i()
   end

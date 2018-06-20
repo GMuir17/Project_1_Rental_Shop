@@ -47,8 +47,10 @@ class Legion
     sql = "SELECT returned FROM deployments
           WHERE deployments.legion_id = $1;"
     values = [@id]
-    result = SqlRunner.run(sql, values).first()["returned"]
-    if result == "f"
+    result = SqlRunner.run(sql, values).first()
+    returned_result = result["returned"]
+    return false if result == nil
+    if returned_result == "f"
       return true
     else
       return false
