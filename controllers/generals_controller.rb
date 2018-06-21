@@ -14,6 +14,17 @@ get "/generals/new" do
   erb(:"generals/new")
 end
 
+# search
+get "/generals/search" do
+  erb(:"generals/search")
+end
+
+post "/generals/search" do
+  @general = General.find_by_name(params["name"])
+  return erb(:"generals/no_result") if @general == nil
+  erb(:"generals/results")
+end
+
 # show
 get "/generals/:id" do
   @general = General.find_by_id(params["id"].to_i())

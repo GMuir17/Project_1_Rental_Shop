@@ -81,6 +81,7 @@ class General
     sql = "SELECT * FROM generals WHERE name = $1;"
     values = [name]
     results = SqlRunner.run(sql, values)
+    return nil if results.first() == nil
     general = General.new(results.first())
     return general
   end
