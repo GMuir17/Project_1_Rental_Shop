@@ -1,6 +1,6 @@
 body {
   font-family: 'PT Sans', sans-serif;
-  color: #6a60a9;
+  color: #4d3eb2;
   background-color: #fffcf0;
 }
 
@@ -15,18 +15,19 @@ body {
 
 .title-wrapper {
   display: flex;
+  justify-content: space-between;
+  background-color: #fbd14b;
 }
 
 #layout-title {
-  align-content: center;
-  display: inline-block;
+  margin-left: 1em;
 }
 
 img.title-wrapper {
-  align-content: right;
+  /* justify-self: right; */
 }
 
 a {
   text-decoration: none;
-  color: #201b3d;
+  color: #6e62bc;
 }

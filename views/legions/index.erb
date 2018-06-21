@@ -1,5 +1,9 @@
 <h1>Legions</h1>
-<p><a href="/legions/search">Search Legions</a></p>
+<form action="/legions/search" method="post">
+  <input type="text" name="name">
+  <input type="submit" value="Search">
+</form>
+<!-- <p><a href="/legions/search">Search Legions</a></p> -->
 <p><a href="/legions/new">Raise New Legion</a></p>
 <br>
 <% for legion in @legions %>
