@@ -83,6 +83,7 @@ class Legion
     sql = "SELECT * FROM legions WHERE name = $1;"
     values = [name]
     results = SqlRunner.run(sql, values)
+    return nil if results.first() == nil
     legion = Legion.new(results.first())
     return legion
   end
