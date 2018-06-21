@@ -11,8 +11,6 @@ end
 
 post "/search" do
   @legion = Legion.find_by_name(params["name"])
-  return erb(:"/searches/no_result") if @legion == nil
+  # return erb(:"/searches/no_result") if @legion.id() == nil
   erb(:"/searches/results")
-  # @legion = Legion.find_by_name(params)
-  # erb(:"/searches/results")
 end
