@@ -58,16 +58,16 @@ a {
   width: 50%;
 }
 
-/* input.submit {
-  background-color: red;
-} */
-
 .index {
   padding-left: 1em;
   margin-left: 2em;
 }
 
-.legion-index {
+.index-item {
   border-left: 2px solid #4d3eb2;
   padding-left: 1em;
+}
+
+ul {
+  list-style-type: none;
 }

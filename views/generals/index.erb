@@ -1,13 +1,18 @@
-<h1>Generals</h1>
-<form action="/generals/search" method="post">
-  <input type="text" name="name">
-  <input type="submit" value="Search">
-</form>
-<!-- <p><a href="/generals/search">Search Generals</a></p> -->
-<p><a href="/generals/new">Hire New General</a></p>
-<br>
-<% for general in @generals %>
-<p><%= general.name() %></p>
-<p><a href="/generals/<%= general.id() %>">More Details</a></p>
-<hr>
-<% end %>
+<div class="index">
+
+  <h1>Generals</h1>
+  <form action="/generals/search" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Search">
+  </form>
+
+  <p><a href="/generals/new">Hire New General</a></p>
+  <br>
+  <% for general in @generals %>
+  <div class="index-item">
+    <a href="/generals/<%= general.id() %>"><%= general.name() %></a>
+  </div>
+  <br>
+  <% end %>
+
+</div>

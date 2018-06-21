@@ -1,9 +1,1 @@
-<h3><%= @general.name() %></h3>
-<br>
-<ul>
-  <li>Reputation: <%= @general.reputation() %></li>
-</ul>
-<br>
-<form method="post" action="/generals/<%= @general.id() %>/delete">
-  <input type="submit" value="'Fire' General">
-</form>
+<h3><a href="/generals/<%= @general.id() %>"><%= @general.name() %></a></h3>

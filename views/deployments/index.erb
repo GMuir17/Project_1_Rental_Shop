@@ -1,10 +1,17 @@
-<h1>Deployments</h1>
+<div class="index">
 
-<p><a href="/deployments/new">Create New Deployment</a></p>
-<br>
-<% for deployment in @deployments %>
-<p>Troops recruited in: <%= deployment.start_date() %></p>
-<p>Campaign will last <%= deployment.campaign_length() %> seasons</p>
-<p><a href="/deployments/<%= deployment.id() %>">More Details</a></p>
-<hr>
-<% end %>
+  <h1>Deployments</h1>
+
+  <p><a href="/deployments/new">Create New Deployment</a></p>
+  <br>
+
+  <% for deployment in @deployments %>
+  <div class="index-item">
+    <p>Troops recruited in: <%= deployment.start_date() %></p>
+    <p>Campaign will last <%= deployment.campaign_length() %> seasons</p>
+    <p><a href="/deployments/<%= deployment.id() %>">More Details</a></p>
+    <br>
+  </div>
+  <% end %>
+
+</div>

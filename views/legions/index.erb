@@ -1,17 +1,18 @@
 <div class="index">
 
-<h1>Legions</h1>
-<form action="/legions/search" method="post">
-  <input type="text" name="name">
-  <input type="submit" value="Search">
-</form>
-<!-- <p><a href="/legions/search">Search Legions</a></p> -->
-<p><a href="/legions/new">Raise New Legion</a></p>
-<br>
-<% for legion in @legions %>
-<div class="legion-index">
-<a href="/legions/<%= legion.id() %>"><%= legion.name() %></a>
-</div>
-<br>
-<% end %>
+  <h1>Legions</h1>
+  <form action="/legions/search" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Search">
+  </form>
+
+  <p><a href="/legions/new">Raise New Legion</a></p>
+  <br>
+  <% for legion in @legions %>
+  <div class="index-item">
+    <a href="/legions/<%= legion.id() %>"><%= legion.name() %></a>
+  </div>
+  <br>
+  <% end %>
+
 </div>
