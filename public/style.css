@@ -71,3 +71,23 @@ a {
 ul {
   list-style-type: none;
 }
+
+.input-form {
+  height: 25%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #4d3eb2;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.submit-button {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #fbd14b;
+  color: #4d3eb2;
+  border-radius: 2em;
+}

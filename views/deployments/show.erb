@@ -3,16 +3,13 @@
   <h3>Deployment <%= @deployment.id() %></h3>
   <br>
 
-  <ul>
     <div class="index-item">
-      <li class="deployment-list">General in Command: <%= @deployment.general().name() %></li>
-      <li class="deployment-list">Legion deployed: <%= @deployment.legion().name() %></li>
-      <li class="deployment-list">Campaign Start: <%= @deployment.start_date() %></li>
-      <li class="deployment-list">Campaign Length: <%= @deployment.campaign_length() %> seasons</li>
-      <li class="deployment-list">Deployment over: <%= @deployment.bool_to_text() %></li>
-
+      <p>General in Command: &nbsp <%= @deployment.general().name() %></p>
+      <p>Legion deployed: &nbsp <%= @deployment.legion().name() %></p>
+      <p>Campaign Start: &nbsp <%= @deployment.start_date() %></p>
+      <p>Campaign Length: &nbsp <%= @deployment.campaign_length() %> seasons</p>
+      <p>Deployment over: &nbsp <%= @deployment.bool_to_text() %></p>
     </div>
-  </ul>
   <br>
   <form action="/deployments/<%= @deployment.id() %>/end-deployment" method="post">
     <input type="submit" value="End Deployment">
