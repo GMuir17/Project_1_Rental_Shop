@@ -14,6 +14,17 @@ get "/legions/new" do
   erb(:"legions/new")
 end
 
+# search
+get "/legions/search" do
+  erb(:"legions/search")
+end
+
+post "/legions/search" do
+  @legion = Legion.find_by_name(params["name"])
+  return erb(:"legions/no_result") if @legion == nil
+  erb(:"legions/results")
+end
+
 # show
 get "/legions/:id" do
   @legion = Legion.find_by_id(params["id"].to_i())
