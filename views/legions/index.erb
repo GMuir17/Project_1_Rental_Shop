@@ -1,3 +1,5 @@
+<div class="index">
+
 <h1>Legions</h1>
 <form action="/legions/search" method="post">
   <input type="text" name="name">
@@ -7,6 +9,9 @@
 <p><a href="/legions/new">Raise New Legion</a></p>
 <br>
 <% for legion in @legions %>
-<p><a href="/legions/<%= legion.id() %>"><%= legion.name() %></a></p>
-<hr>
+<div class="legion-index">
+<a href="/legions/<%= legion.id() %>"><%= legion.name() %></a>
+</div>
+<br>
 <% end %>
+</div>

@@ -4,13 +4,19 @@ body {
   background-color: #fffcf0;
 }
 
-#menu {
+.menu-nav {
   display: flex;
+  justify-content: space-around;
+  /* margin-left: 2em; */
 }
 
 .menu-item {
   display: inline-block;
   flex-grow: 1;
+  margin: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  /* margin-left: 1em; */
 }
 
 .title-wrapper {
@@ -30,4 +36,38 @@ img.title-wrapper {
 a {
   text-decoration: none;
   color: #6e62bc;
+}
+
+#home-title {
+  text-align: center;
+}
+
+#home-body {
+  /* background-image: url("/images/second_triumverate.jpg");
+  background-size: cover; */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#rome-map {
+  opacity: 0.5;
+  height: 50%;
+  width: 50%;
+}
+
+/* input.submit {
+  background-color: red;
+} */
+
+.index {
+  padding-left: 1em;
+  margin-left: 2em;
+}
+
+.legion-index {
+  border-left: 2px solid #4d3eb2;
+  padding-left: 1em;
 }
