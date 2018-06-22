@@ -8,6 +8,8 @@
     </ul>
   </div>
   <br>
+  <a href="/generals/<%= @general.id() %>/edit">Edit General</a>
+  <br>
   <form method="post" action="/generals/<%= @general.id() %>/delete">
     <input type="submit" value="'Fire' General">
   </form>

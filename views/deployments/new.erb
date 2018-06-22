@@ -1,25 +1,30 @@
-<form method="post" action="/deployments">
+<div class="index">
 
-  <label for="general_select">General:</label>
-  <select name="general_id" id="general_select">
-    <% for general in @generals  %>
-    <option value=<%= general.id() %>><%= general.name() %></option>
-    <% end %>
-  </select>
 
-  <label for="legion_select">Legion:</label>
-  <select name="legion_id" id="legion_select">
-    <% for legion in @legions  %>
-    <option value=<%= legion.id() %>><%= legion.name() %></option>
-    <% end %>
-  </select>
+  <form class="input-form" method="post" action="/deployments">
 
-  <label for="start_date">Start Date:</label>
-  <input type="text" name="start_date">
+    <label for="general_select">General:</label>
+    <select name="general_id" id="general_select">
+      <% for general in @generals  %>
+      <option value=<%= general.id() %>><%= general.name() %></option>
+      <% end %>
+    </select>
+    <br>
+    <label for="legion_select">Legion:</label>
+    <select name="legion_id" id="legion_select">
+      <% for legion in @legions  %>
+      <option value=<%= legion.id() %>><%= legion.name() %></option>
+      <% end %>
+    </select>
+    <br>
+    <label for="start_date">Start Date:</label>
+    <input type="text" name="start_date">
+    <br>
+    <label for="campaign_length">Campaign Length:</label>
+    <input type="number" name="campaign_length">
+    <br>
+    <input class="submit-button" type="submit" value="Assign Legion"/>
 
-  <label for="campaign_length">Campaign Length:</label>
-  <input type="number" name="campaign_length">
+  </form>
 
-  <input type="submit" value="Assign Legion"/>
-
-</form>
+</div>
